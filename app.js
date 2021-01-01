@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const mongoose = require("mongoose");
 
 //Setting up the app-
 const app = express();
@@ -11,7 +12,19 @@ app.use(bodyParser.urlencoded({
     extended: true,
 }));
 
-app.get("/home", function(req, res){
+//Connecting to the DB-
+mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+
+//Making a schema for the DB-
+const userSchema = {
+    email: String,
+    password: String,
+};
+
+//Setting up our DB model-
+const User = new mongoose.model("User", userSchema);
+
+app.get("/", function(req, res){
     res.render("home");
 });
 
