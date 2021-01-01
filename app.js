@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //Connecting to the DB-
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/userDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 //Making a schema for the DB-
 const userSchema = {
