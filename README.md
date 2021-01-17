@@ -2,7 +2,7 @@
 
 ## About repository-
 These are code snippets of different authentication techniques in Node JS such as salting, hashing, encrypting using various packages from `npm`. Some of the packages used include:
-- Bycrypt
+- Bcrypt
 - md5
 - mongoose-encryption
 - passport
